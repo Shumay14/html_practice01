@@ -1,0 +1,141 @@
+<!-- 열차 시간표 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, th, td {
+            border:1px solid black;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding:10px
+        }
+
+        /* tr:nth-child(even)>td{
+            background-color: rgb(190, 186, 186);
+        } */
+        /* even odd */
+
+        /* tr>td:nth-child(3) {
+            background-color: palegreen;
+        }
+
+        tr>th:nth-child(2)>th:nth-child(1) {
+            background-color: palevioletred;
+            text-align: right;
+        } */
+
+        /* th table head
+        tr table row 가로줄 횡
+        td table data 셀 열
+         */
+        tr:nth-child(2)>th:nth-child(1),
+        tr:nth-child(2)>th:nth-child(2) {
+            background-color: cadetblue;
+        }
+
+        tr>td:nth-child(3),
+        tr>td:nth-child(4) {
+            background-color: cadetblue;
+        }
+
+        tr>td:nth-child(5),
+        tr>td:nth-child(6) {
+            background-color: orange;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <table style="width:100%;">
+        <tr>
+            <th rowspan="2">출발역</th>
+            <th rowspan="2">도착역</th>
+            <th colspan="2" style="background-color: cadetblue;">현재운임</th>
+            <th colspan="2" style="background-color: orange;">2022년 중앙선 전 구간 개통시<br> 청량리~서원주 구간 '준고속 서비스'</th>
+
+        </tr>
+
+        <tr>
+            <th style="background-color: cadetblue;">일반실(A)</th>
+            <th style="background-color: cadetblue;">우등실</th>
+            <th style="background-color: orange;">일반실(B)</th>
+            <th style="background-color: orange;">우등실</th>
+        </tr>
+
+        <tr>
+            <td style="text-align: center;">청량리</td>
+            <td style="text-align: center;">원주</td>
+            <td style="text-align: right;">10,100</td>
+            <td style="text-align: right;">13,100</td>
+            <td style="text-align: right;">13,300</td>
+            <td style="text-align: right;">16,300</td>
+        </tr>
+
+        <tr>
+            <td>양평</td>
+            <td>원주</td>
+            <td>10,100</td>
+            <td>13,100</td>
+            <td>13,300</td>
+            <td>16,300</td>
+        </tr>
+
+
+        <tr>
+            <td>원주</td>
+            <td>제천</td>
+            <td>10,100</td>
+            <td>13,100</td>
+            <td>13,300</td>
+            <td>16,300</td>
+        </tr>
+
+        <tr>
+            <td>원주</td>
+            <td>단양</td>
+            <td>10,100</td>
+            <td>13,100</td>
+            <td>13,300</td>
+            <td>16,300</td>
+        </tr>
+
+        <tr>
+            <td>원주</td>
+            <td>풍기</td>
+            <td>10,100</td>
+            <td>13,100</td>
+            <td>13,300</td>
+            <td>16,300</td>
+        </tr>
+
+        <tr>
+            <td>원주</td>
+            <td>영주</td>
+            <td>10,100</td>
+            <td>13,100</td>
+            <td>13,300</td>
+            <td>16,300</td>
+        </tr>
+        
+        <tr>
+            <td>원주</td>
+            <td>안동</td>
+            <td>10,100</td>
+            <td>13,100</td>
+            <td>13,300</td>
+            <td>16,300</td>
+        </tr>
+
+    </table>
+
+</body>
+
+</html>
