@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        /* style the body */
+        body {
+            font-family: Arial;
+            margin: 10px;
+        }
+
+        /* column container */
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        /* create two unequal columns that sits next to each other */
+        /* sidebar/left column */
+        .side {
+            flex: 30%;
+            color: ivory;
+            background-color: skyblue;
+            /* padding: 20px; */
+            text-align: left 10px;
+        }
+
+        /* main column */
+        .main {
+            flex: 70%;
+            background-color: ivory;
+            /* max-width: 500px; */
+            padding: 20px;
+        }
+
+        /* Fake image, just for this example */
+        .fakeimg {
+            background-color: #aaa;
+            width: 90%;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .head {
+            background-color: navy;
+            border: solid 8px;
+            border-color: navy;
+            font-size: 24px;
+        }
+
+        #pp p {
+            padding-left: 10px;
+        }
+
+
+
+        /* responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 700px) {
+            .row {
+                flex-direction: row;
+            }            
+
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+    <!-- The flexible grid (content) -->
+    <div class="row">
+        <div class="side" id="pp">
+            <h2 style="font-size: 24px; padding: 10px;">Joseph Shu</h2>
+            <div class="fakeimg" style="height:200px;"> Image</div>
+            <h4 class="head">About Me</h4>
+            <p>some text about me</p>
+            
+            <h4 class="head">Contact</h4>
+            <h5 style="padding-left: 10px; font-size:20px;"><b>Address</b></h5>
+            <p>Sejong, dasom-ro</p>
+            <h5 style="padding-left: 10px; font-size:20px;"><b>Phone</b></h5>
+            <p>010-1234-5678</p>
+            <h5 style="padding-left: 10px; font-size:20px;"><b>E-mail</b></h5>
+            <p>abcde@naver.com</p>
+            <br>
+            
+            <h4 class="head">Skills</h4>
+            <p></p>
+            
+            <h4 class="head">Languages</h4>
+            <p>Korean</p>
+            <p>English</p>
+
+
+
+
+        </div>
+
+        <div class="main">
+            <h2 style="color: navy">Description</h2>
+            <p>blahblahblahblahblah</p>
+
+            <h2 style="color: navy; border-style: solid none; padding: 10px;">Work Experience</h2>
+            
+           
+
+            <div style="display:flex;">
+                <p style="flex:30%;">2000.00~2000.00</p>
+                <ul style="flex:70%;">            
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+
+            <h2 style="color: navy; border-style: solid none; padding: 10px;">Education</h2>
+            <ul>
+                <li>Bachelar of Arts:Economics</li>
+                <li></li>
+            </ul>
+            <h2 style="color: navy; border-style: solid none; padding: 10px;">Certifications</h2>
+            <ul>
+                <li>CFA Level 1</li>
+                <li>Certified Research Analyst</li>
+                <li>Certified Investment Manger</li>
+                <li></li>
+            </ul>
+
+
+
+        </div>
+
+
+    </div>
+
+    
+</body>
+
+</html>
