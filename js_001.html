@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 산술 연산자 심화
+        var y = 3;
+        var z = 5;
+        
+        console.log((y++) + (++z) + (y++) - (z--));
+        //            3     1+5=6     4       6  == 7
+        var result = (y++) + (++z) + (y++) - (--z);
+        //             5     1+5=6     6     -1+6=5 == 12
+        console.log(result);
+
+        //조건(삼항) 연산자
+
+        var age = 19;
+        var isAdult = (age >= 19) ? true : false;
+        console.log(isAdult);
+
+        var isAdult = (age <= 22) ? true : false;
+        console.log(isAdult);
+
+        var isAdult = (age <= 11) ? true : false;
+        console.log(isAdult);
+
+        var time = 8;
+        var greeting = (time <= 10) ? "goodmorning" : (time <= 16) ? "goodafternoon" : 
+        (time <= 20) ? "goodevening" : "goodnight";  
+        console.log(greeting);
+
+        // Object 객체
+        let person = {
+            firstName:"joseph", lastName:"Shu",
+            age: 30,
+            tel: "1234567",
+            email: "abcde@gmail.com"
+            
+        };
+
+        person.address = "sejong"
+        person.firstName = "good"
+        // key:value
+
+        console.log(person.firstName);
+        console.log(person.lastName);
+        console.log(person.age);
+        console.log(person.email);
+
+        person.age = 31;
+        console.log(person.age);
+
+        console.log(person["age"]);
+        console.log(person["firstName"]);
+
+        let firstNameKey = "firstName";
+        let k = firstNameKey;
+        
+        let j = ""; // j 라는 변수 필요한때 ""에 값입력하여 사용하면 유용함
+
+        // console.log(person.firstNameKey);
+        console.log(person[firstNameKey]); //firstNameKey = "firstName" 이므로 person 객체에서 찾아서 실행됨
+        console.log(person.firstName);
+        console.log(person["firstName"]);
+        console.log(person[k]);
+
+        console.log(person.lastName);
+
+    </script>
+</body>
+
+</html>
