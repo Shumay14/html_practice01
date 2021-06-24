@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="4-04.user_data.js"></script>
+    <script>
+        //
+        var productList = [
+            {
+                name: "솔의눈",
+                price: 700
+            },
+            {
+                name: "커피",
+                price: 700
+            },
+            {
+                name: "파워레이드",
+                price: 1200
+            },
+            {
+                name: "오렌지",
+                price: 1000
+            },
+            {
+                name: "보리차",
+                price: 1200
+            },
+            {
+                name: "밀키스",
+                price: 800
+            }
+        ];
+
+        var inputCoin = 800;
+
+        function getProductList(inputCoin) {
+            var outputList = [];
+            for (var product of productList) {
+                if(product.price <= inputCoin) {
+                    outputList.push(product);
+                }
+
+            }
+            return outputList;
+
+        }
+
+        var output = getProductList(1000);
+        console.table(output);
+
+        //
+
+        function getUserList(x) {
+            let outputUserList = [];
+            for (let user of userList) {
+                if (user.gender == x) {
+                    outputUserList.push(user);
+                }
+            }
+            return outputUserList;
+        }
+        
+        var output = getUserList("female");
+        console.table(output);
+
+        var output = getUserList("male");
+        console.table(output);
+
+        
+
+
+        
+
+
+    </script>
+</body>
+
+</html>
