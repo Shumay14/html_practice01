@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Math 객체
+        //
+
+        //round() - 파라미터로 전달받은 숫자형 데이터를 반올림 처리함
+        console.log(Math.round(4.9));
+        console.log(Math.round(4.4));
+        console.log(Math.round(-2.7));
+
+        //ceil() - 파라미터로 전달받은 숫자형 데이터를 올림 처리해서 정수로 만듬
+        console.log(Math.ceil(4.4));
+
+
+        //floor() - 내림 처리
+        console.log(Math.floor(2.9));
+
+        //trunc() - 무조건 정수 부분만 반환(소수점은 무조건 버리고 정수만 반환)
+        console.log(Math.floor(2.9));
+
+        //sign() - 양수인지 음수인지만 보여줌
+        console.log(Math.sign(-4222451));
+
+        //pow() - 제곱
+        console.log(Math.pow(8, 2));    //8의 2제곱
+        console.log(Math.pow(8, -2));
+
+
+        //sqrt() - 루트값
+        console.log(Math.sqrt(64)); // 8
+
+        
+        //abs() - 음수이면, 음수부호 없애고, 무조건 양수로 변환
+        console.log(Math.abs(-4.7));
+
+        //min() max()
+        console.log(Math.min(2, 32, 5, 22, 56, 84));
+        console.log(Math.max(2, 42, 55, 43, 12, 47));
+
+
+        //random() - 실행할때 마다 무작위 숫자형 데이터가 나온다.
+        //0보다 크고, 1보다 작은 수가 나온다
+        console.log(Math.random());
+        console.log(Math.floor(Math.random() * 10));
+        console.log(Math.floor(Math.random() * 10) + 1);
+        console.log(Math.floor(Math.random() * 100) + 1);
+
+        
+        function getRandomInteger(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        console.log(getRandomInteger(11, 20));
+        console.log(getRandomInteger(1, 10));
+
+
+        //가위바위보 게임 함수 만들기
+        //함수명 - rspPlayer
+        //파라미터 1개 - "가위" "바위" "보"
+        //const arr_rsp = ["가위", "바위", "보"];
+        //random 함수를 써서 0 ~ 2 까지 정수 무작위 추출
+        //이것을 arr_rsp 배열에 인덱스번호 넣음
+        //return - {user_rsp:"", player_rsp:"", winner: win 1/draw 0/lose -1}
+
+        
+
+        function rspPlayer(user_rsp) {
+            const rsp = ["가위", "바위", "보"];
+            const player_rsp = rsp[getRandomInteger(0, 2)];
+
+            if (user_rsp == player_rsp) {
+                return {
+                    "user_rsp": user_rsp,
+                    "player_rsp": player_rsp,
+                    "winner": 0
+                };
+            }
+            else if (user_rsp == "가위") {
+                if (player_rsp == "보") {
+                    return {
+                        "user_rsp": user_rsp,
+                        "player_rsp": player_rsp,
+                        "winner": 1
+                    };
+                }
+            }
+            else if (user_rsp == "바위") {
+                if (player_rsp == "가위") {
+                    return {
+                        "user_rsp": user_rsp,
+                        "player_rsp": player_rsp,
+                        "winner": 1
+                    };
+                }
+            }
+            else if (user_rsp == "보") {
+                if (player_rsp == "바위") {
+                    return {
+                        "user_Rsp": user_rsp,
+                        "player_rsp": player_rsp,
+                        "winner": 1
+                    };
+                }
+            }
+            else {
+                return {
+                    "user_rsp": user_rsp,
+                    "player_rsp": player_rsp,
+                    "winner": 1
+                }
+            }
+        }
+
+        console.table(rspPlayer("가위"));
+
+
+        function rspPlayer2(user_rsp) {
+            const rsp = ["가위", "바위", "보"];
+            const player_rsp = rsp[getRandomInteger(0, 2)];
+            const winValue = {
+                "가위" : "보",
+                "바위" : "가위",
+                "보" : "바위"
+            }
+
+            return {
+                "user_rsp": user_rsp,
+                "player_rsp": player_rsp,
+                "winner": (user_rsp == player_rsp) ? 0: (winValue[user_rsp] == player_rsp) ? 1 : -1
+            }
+        }
+
+        console.table(rspPlayer2("가위"));
+
+    </script>
+</body>
+
+</html>
