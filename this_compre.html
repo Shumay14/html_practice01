@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // "use strict";
+         var value = "func Window"
+
+        A();    // A: func Window C: func Window D: func Window
+        B();    // B: func Window
+        // C();    // undefined
+
+        function A() {
+            var value = "func A"
+            console.log("A:", this.value);
+            console.log("a:", value);
+            // return this;  
+
+
+            function C() {
+                var value = "func C"
+                console.log("C:", this.value);
+                console.log("c:", value);
+
+                function D() {
+                    var value = "func D"
+                    console.log("D:", this.value);
+                    console.log("d:", value);
+                }
+                D();
+            }
+            // return this;
+            C();
+            // return this;
+        }
+
+        function B() {
+            var value = "func B"
+            console.log("B:", this.value);
+        }
+
+        B();
+
+        var myValue = {
+            value: "myValue",
+            test: function () {
+                console.log("VAR:", this.value);
+            }
+        }
+
+        myValue.test();     // VAR: myValue
+
+
+    </script>
+</body>
+
+</html>
