@@ -1,4 +1,4 @@
-const condition = ture;
+const condition = true; // true -> resolve, false -> reject
 const promise = new Promise((resolve, reject) => {
     if (condition) {
         resolve("success");
@@ -8,31 +8,42 @@ const promise = new Promise((resolve, reject) => {
     }
 });
 
+// <case1>
 promise
     .then((message) => {
-        console.log(message);   // when resolve
+        // console first
+        console.log("message1", message);   // when resolve
     })
     .catch((error) => {
         console.error(error);   // when reject
     })
     .finally(() => {
+        // console second
         console.log("must operate it");
     });
 
+// <case2>    
 promise
     .then((message) => {
         return new Promise((resolve, reject) => {
-            resolve(message);
+            // console 
+            resolve("a", message);
+            reject("aa", message);
         });
     })
     .then((message2) => {
-        console.log(message2);
+        // console 
+        console.log("console b", message2); // message2 = a
         return new Promise((resolve, reject) => {
-            resolve(message2);
+            resolve("b", message2);
+            reject("bb", message2);
+            // console 
+            console.log("console c", message2);
         });
     })
     .then((message3) => {
-        console.log(message3);
+        // console 
+        console.log("console d", message3);
     })
     .catch((error) => {
         console.error(error);
